@@ -1,0 +1,414 @@
+/* CSS Variables for new background */
+:root {
+    --purple: #8a15ff;
+    --blue: #3800e7;
+    --ltblue: #15e0ff;
+    --magenta: #d000c5;
+}
+
+/* New body styles for animated background */
+body {
+    background: linear-gradient(var(--blue), var(--purple));
+    height: 100vh;
+    font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
+    font-family: "DM Mono", monospace;
+    font-weight: 300;
+    overflow: hidden; /* Crucial for the new background animations */
+    color: white; /* Default text color for body, overridden by manual-container */
+    text-align: center;
+    display: flex; /* For centering the manual-container */
+    justify-content: center;
+    align-items: center; /* Center vertically */
+    padding: 0; /* Remove previous padding */
+}
+
+h1 {
+    font-size: 3em;
+    margin-bottom: 0.2em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+.main {
+    height: 100vh;
+    width: 100vw; /* Ensure it covers the viewport */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.main:before,
+.main:after {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -3;
+}
+.main:before {
+    right: 0;
+    bottom: -19em;
+    height: 30em;
+    width: 30em;
+    border-radius: 30em;
+    background: linear-gradient(var(--blue), var(--purple));
+    align-self: flex-end;
+    animation: gradient-fade 8s ease-in-out 3s infinite alternate;
+}
+.main:after {
+    top: 0;
+    left: 30em;
+    height: 10em;
+    width: 10em;
+    border-radius: 10em;
+    background: linear-gradient(var(--blue), var(--purple));
+    animation: gradient-fade-alt 6s ease-in-out 3s infinite alternate;
+}
+
+.main__text-wrapper {
+    position: relative;
+    padding: 2em;
+    z-index: 2; /* Ensure it's above background elements */
+}
+
+.main__text-wrapper:before,
+.main__text-wrapper:after {
+    content: "";
+    display: block;
+    position: absolute;
+}
+
+.main__text-wrapper:before {
+    z-index: -1;
+    top: -3em;
+    right: -3em;
+    width: 13em;
+    height: 13em;
+    opacity: 0.7;
+    border-radius: 13em;
+    background: linear-gradient(var(--ltblue), var(--purple));
+    animation: rotation 7s linear infinite;
+}
+
+.main__text-wrapper:after {
+    z-index: -1;
+    bottom: -20em;
+    width: 20em;
+    height: 20em;
+    border-radius: 20em;
+    background: linear-gradient(var(--magenta), var(--purple));
+    animation: rotation 7s linear infinite;
+}
+
+.arrow {
+    z-index: 1000;
+    opacity: 0.5;
+    position: absolute;
+}
+
+.arrow--top {
+    top: 0;
+    left: -5em;
+}
+
+.arrow--bottom {
+    bottom: 0;
+    right: 3em;
+}
+
+.circle {
+    transform: translate(50%, -50%) rotate(0deg);
+    transform-origin: center;
+}
+
+.circle--ltblue {
+    height: 20em;
+    width: 20em;
+    border-radius: 20em;
+    background: linear-gradient(var(--ltblue), var(--blue));
+}
+
+.dotted-circle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0.3;
+    animation: rotation 38s linear infinite;
+}
+
+/* animations */
+.draw-in {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 10;
+    animation: draw 15s ease-in-out alternate infinite;
+}
+
+@keyframes draw {
+    from { stroke-dashoffset: 1000; }
+    to { stroke-dashoffset: 0; }
+}
+
+.item-to {
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
+}
+
+.bounce-1 { animation-name: bounce-1; animation-timing-function: ease; }
+.bounce-2 { animation-name: bounce-2; animation-timing-function: ease; }
+.bounce-3 { animation-name: bounce-3; animation-timing-function: ease; }
+
+@keyframes bounce-1 {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(50px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes bounce-2 {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes bounce-3 {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(30px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes rotation {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes gradient-fade {
+    from { transform: translate(10%, -10%) rotate(0deg); }
+    to { transform: translate(50%, -50%) rotate(360deg); }
+}
+
+@keyframes gradient-fade-alt {
+    from { transform: translate(-20%, 20%) rotate(0deg); }
+    to { transform: translate(-60%, 60%) rotate(360deg); }
+}
+
+/* Estilos del manual, ajustados para el nuevo fondo */
+.manual-container {
+    background: rgba(158, 61, 225, 0.3); /* Fondo semitransparente púrpura */
+    border-radius: 16px; /* Radio de borde */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Sombra de caja */
+    backdrop-filter: blur(2.7px); /* Efecto de desenfoque */
+    -webkit-backdrop-filter: blur(2.7px); /* Compatibilidad con WebKit */
+    max-width: 900px; /* Max width for readability */
+    width: 100%;
+    overflow: hidden; /* Ensures rounded corners apply */
+    z-index: 1; /* Asegura que el manual esté por encima del fondo */
+    margin: 2rem; /* Espacio alrededor del manual */
+}
+
+/* Header styling */
+.manual-header {
+    background: rgba(61, 190, 225, 0.3); /* Nuevo fondo transparente azul */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    color: white; /* Texto blanco para contraste */
+    padding: 2rem 1.5rem;
+    text-align: center;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+}
+
+.manual-header h1 {
+    font-size: 2.25rem; /* text-4xl */
+    font-weight: 700; /* font-bold */
+    margin-bottom: 0.5rem;
+}
+
+.manual-header p {
+    font-size: 1.125rem; /* text-lg */
+    opacity: 0.9;
+}
+
+/* Navigation styling */
+.manual-nav {
+    background: rgba(61, 190, 225, 0.15); /* Fondo transparente para la barra de navegación */
+    border-bottom: 1px solid rgba(61, 190, 225, 0.4); /* Borde ajustado */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05); /* Sombra más ligera */
+    backdrop-filter: blur(10px); /* Desenfoque */
+    -webkit-backdrop-filter: blur(10px);
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+    gap: 0.75rem; /* Space between nav items */
+    justify-content: center; /* Center nav items */
+}
+
+.manual-nav a {
+    background-color: rgba(61, 190, 225, 0.5); /* Nuevo fondo transparente para botones */
+    color: white; /* Texto blanco para contraste */
+    border-radius: 16px; /* Radio de borde */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px); /* Desenfoque */
+    -webkit-backdrop-filter: blur(8px);
+    padding: 0.6rem 1.2rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+    white-space: nowrap; /* Prevent text wrapping inside buttons */
+}
+
+.manual-nav a:hover {
+    background-color: rgba(61, 190, 225, 0.7); /* Más opaco al pasar el ratón */
+    box-shadow: 0 6px 40px rgba(0, 0, 0, 0.15); /* Sombra más fuerte al pasar el ratón */
+}
+
+/* Content styling */
+.manual-content {
+    padding: 1.5rem;
+}
+
+/* Accordion item styling */
+.accordion-item {
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Borde más sutil para glassmorphism */
+    border-radius: 16px; /* Radio de borde */
+    margin-bottom: 1rem;
+    overflow: hidden; /* For smooth border-radius */
+}
+
+.accordion-header {
+    background: rgba(61, 225, 201, 0.3); /* Nuevo fondo transparente azul-verde */
+    border-radius: 16px; /* Radio de borde */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Sombra de caja */
+    backdrop-filter: blur(14px); /* Efecto de desenfoque */
+    -webkit-backdrop-filter: blur(14px); /* Compatibilidad con WebKit */
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 600; /* font-semibold */
+    color: white; /* Texto blanco para contraste */
+    transition: background-color 0.2s ease;
+}
+
+.accordion-header:hover {
+    background-color: rgba(61, 225, 201, 0.5); /* Ligeramente más opaco al pasar el ratón */
+}
+
+.accordion-header .icon {
+    transition: transform 0.3s ease;
+}
+
+.accordion-header[aria-expanded="true"] .icon {
+    transform: rotate(90deg); /* Rotate icon when open */
+}
+
+.accordion-content {
+    padding: 0 1.5rem; /* Padding for content */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    background: rgba(61, 225, 201, 0.3); /* Nuevo fondo transparente azul-verde */
+    border-radius: 16px; /* Radio de borde */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Sombra de caja */
+    backdrop-filter: blur(14px); /* Efecto de desenfoque */
+    -webkit-backdrop-filter: blur(14px); /* Compatibilidad con WebKit */
+    color: white; /* Texto blanco para el contenido */
+}
+
+.accordion-content.expanded {
+    max-height: 2000px; /* Large enough value to show content */
+    padding: 1rem 1.5rem 1.5rem; /* Adjust padding when expanded */
+}
+
+.accordion-content p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.accordion-content ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.accordion-content ol {
+    list-style-type: decimal;
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.accordion-content li {
+    margin-bottom: 0.5rem;
+}
+
+/* Styling for code/prompt blocks */
+.code-block {
+    background-color: rgba(255, 255, 255, 0.1); /* Ligeramente transparente */
+    border-left: 4px solid var(--ltblue); /* Color de borde del nuevo tema */
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+    font-size: 0.9rem;
+    white-space: pre-wrap; /* Preserve whitespace and wrap text */
+    word-break: break-word; /* Break long words */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    position: relative; /* For copy button positioning */
+    color: white; /* Texto blanco para el código */
+}
+
+.copy-button {
+    background-color: var(--ltblue); /* Color del nuevo tema */
+    color: #333; /* Texto oscuro para contraste */
+    padding: 0.4rem 0.8rem;
+    border: none;
+    border-radius: 0.375rem; /* rounded-md */
+    cursor: pointer;
+    font-size: 0.8rem;
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    transition: background-color 0.2s ease;
+}
+
+.copy-button:hover {
+    background-color: var(--blue); /* Darker blue on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .manual-header h1 {
+        font-size: 1.75rem; /* text-3xl on smaller screens */
+    }
+    .manual-header p {
+        font-size: 1.125rem; /* text-lg on smaller screens */
+    }
+    .manual-nav {
+        flex-direction: column; /* Stack nav items vertically */
+        align-items: stretch; /* Stretch to full width */
+    }
+    .manual-nav a {
+        text-align: center;
+    }
+    .accordion-header {
+        font-size: 1.1rem; /* Slightly smaller header text */
+        padding: 0.8rem 1rem;
+    }
+    .accordion-content {
+        padding: 0 1rem;
+    }
+    .accordion-content.expanded {
+        padding: 0.8rem 1rem 1.2rem;
+    }
+    .copy-button {
+        position: static; /* Position normally on small screens */
+        margin-top: 0.5rem;
+        width: 100%;
+    }
+}
