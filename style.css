@@ -10,8 +10,8 @@
 body {
     background: linear-gradient(var(--blue), var(--purple));
     height: 100vh;
-    font-size: calc(14px + (26 - 14) * ((100vw - 300px) / (1600 - 300)));
-    font-family: "DM Mono", monospace;
+    /* Changed font to Calibri with fallbacks */
+    font-family: "Calibri", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-weight: 300;
     overflow: hidden; /* Crucial for the new background animations */
     color: white; /* Default text color for body, overridden by manual-container */
