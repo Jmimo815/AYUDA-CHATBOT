@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual Interactivo: Chatbot para Microempresas</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Font: DM Mono -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;1,500&display=swap" rel="stylesheet">
+    <!-- Enlace al archivo CSS externo -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Main container for the new animated background -->
+    <div class="main">
+        <div class="main__text-wrapper">
+            <div class="manual-container">
+                <header class="manual-header">
+                    <h1>Manual Interactivo: Chatbot Inteligente para Microempresas</h1>
+                    <p>Guía para Aprendices de Asistencia Administrativa - Creando con Google Gemini</p>
+                </header>
+
+                <nav class="manual-nav" id="manualNav">
+                    <a href="#introduccion">Introducción</a>
+                    <a href="#porque-chatbot">¿Por Qué un Chatbot?</a>
+                    <a href="#ejemplo-chatbot">Entendiendo el Ejemplo</a>
+                    <a href="#preparacion-base">Preparando la Base</a>
+                    <a href="#creacion-chatbot">Creando el Chatbot</a>
+                    <a href="#prompts-ejemplo">Prompts de Ejemplo</a>
+                    <a href="#consejos-adicionales">Consejos Adicionales</a>
+                </nav>
+
+                <main class="manual-content">
+                    <!-- Introducción -->
+                    <section id="introduccion" class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false">
+                            <span>1. Introducción</span>
+                            <span class="icon">></span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>¡Hola, futuros aprendices de Asistencia Administrativa! Como parte de su formación en el <strong>SENA</strong>, tienen una oportunidad increíble de aplicar sus conocimientos para impactar positivamente el mundo de las microempresas. Este manual los guiará, paso a paso, en la creación de un <strong>chatbot inteligente y eficiente</strong> que ayudará a microempresarios a encontrar información clave sobre <strong>análisis, diagnóstico, planeación y soluciones</strong>, todo esto <strong>sin necesidad de programar</strong>, usando las capacidades de <strong>Google Gemini</strong>.</p>
+                            <p>El objetivo principal de su chatbot será <strong>centralizar y ofrecer el conocimiento que han adquirido</strong> sobre la gestión y el fortalecimiento de microempresas.</p>
+                        </div>
+                    </section>
+
+                    <!-- ¿Por Qué un Chatbot con Google Gemini para Microempresas? -->
+                    <section id="porque-chatbot" class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false">
+                            <span>2. ¿Por Qué un Chatbot con Google Gemini?</span>
+                            <span class="icon">></span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Como aprendices de Asistencia Administrativa, entienden la importancia de la <strong>organización de la información</strong>, la <strong>atención al cliente</strong> y la <strong>optimización de procesos</strong>. Un chatbot es una herramienta poderosa que integra estas habilidades:</p>
+                            <ul>
+                                <li><strong>Organiza su Conocimiento:</strong> El chatbot será un repositorio interactivo de toda la investigación y los documentos que han generado sobre microempresas.</li>
+                                <li><strong>Asistencia 24/7:</strong> Las microempresas podrán acceder a información y soluciones en cualquier momento, mejorando la disponibilidad y el servicio.</li>
+                                <li><strong>Eficiencia Administrativa:</strong> Automatizarán la entrega de respuestas a preguntas frecuentes, liberando tiempo para tareas más complejas.</li>
+                                <li><strong>Innovación:</strong> Demostrarán su capacidad de usar herramientas tecnológicas avanzadas (como la Inteligencia Artificial de Gemini) para resolver problemas reales.</li>
+                                <li><strong>Enfoque de Gemini:</strong> Google Gemini, con su comprensión del lenguaje natural, es ideal para crear conversaciones fluidas y relevantes, permitiéndoles ir más allá de las respuestas predefinidas rígidas.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- Entendiendo las Capacidades del Chatbot de Ejemplo -->
+                    <section id="ejemplo-chatbot" class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false">
+                            <span>3. Entendiendo el Chatbot de Ejemplo (y Cómo Imitarlo con Gemini)</span>
+                            <span class="icon">></span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>El chatbot del SENA que les mostramos sirve como una excelente referencia. Veamos cómo sus características se traducen en su proyecto con Gemini:</p>
+                            <ul>
+                                <li><strong>Respuestas Estructuradas y Base de Conocimiento:</strong> El chatbot del SENA tiene respuestas predefinidas. Con <strong>Gemini</strong>, ustedes crearán una <strong>base de conocimiento mucho más dinámica</strong>. Gemini no solo recuperará respuestas, sino que las <strong>interpreta y las adapta</strong> al contexto de la pregunta, ofreciendo una conversación más natural y útil.
+                                    <ul>
+                                        <li><strong>Su Chatbot:</strong> Tendrá acceso a toda su documentación sobre análisis, diagnóstico, planeación y soluciones para microempresas. Si un usuario pregunta "¿Qué debo hacer si mis ventas están bajas?", Gemini podrá analizar esa pregunta y, basándose en la información que le proporcionaron, ofrecer un <strong>diagnóstico inicial y sugerir soluciones específicas</strong> de sus manuales.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Manejo de Casos de Estudio:</strong> El chatbot del SENA presenta casos con análisis y soluciones. <strong>Gemini es perfecto para esto.</strong> Pueden darle a Gemini sus casos de estudio y pedirle que los presente de forma interactiva.
+                                    <ul>
+                                        <li><strong>Su Chatbot:</strong> Un microempresario pregunta: "Tengo un problema de inventario excesivo". Gemini, usando sus casos, podría decir: "Entiendo. Tenemos un caso de estudio de una pequeña tienda de abarrotes que enfrentaba eso. Su <strong>análisis</strong> reveló [causas]. Las <strong>soluciones</strong> aplicadas fueron [acciones]. ¿Te gustaría que te lo detalle?"</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Interacción Guiada (Botones Opcionales):</strong> Aunque Gemini es conversacional, los botones pueden ser útiles para guiar al usuario. Pueden combinarlos con las respuestas de Gemini.</li>
+                                <li><strong>Selección de Perfil del Usuario / Contexto:</strong> El ejemplo permite elegir el rol. Con <strong>Gemini</strong>, esto se puede manejar de forma más orgánica.
+                                    <ul>
+                                        <li><strong>Su Chatbot:</strong> Pueden entrenar a Gemini para que, al inicio o durante la conversación, pregunte: "¿En qué tipo de microempresa tienes interés?" o "¿Cuál es tu principal desafío actual?", para adaptar sus respuestas y hacerlas más pertinentes.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Mensajes Dinámicos y Claros:</strong> Gemini les permitirá generar respuestas en negritas, listas, y párrafos bien estructurados para una mejor lectura.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- Preparando su Base de Conocimiento para Google Gemini -->
+                    <section id="preparacion-base" class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false">
+                            <span>4. Preparando su Base de Conocimiento para Google Gemini</span>
+                            <span class="icon">></span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>¡Esta es la parte más importante! Google Gemini es potente, pero <strong>su inteligencia depende de la calidad y organización de la información que ustedes le proporcionen</strong>.</p>
+                            <h3>Paso 1: Organizar y Procesar su Documentación</h3>
+                            <ol>
+                                <li><strong>Clasifiquen sus Documentos:</strong> Agrupen sus manuales, instructivos, investigaciones y casos de estudio por categorías claras:
+                                    <ul>
+                                        <li><strong>Análisis de Microempresas:</strong> (Ej: "Métodos de Análisis FODA", "Guía de Análisis Financiero Básico", "Estudios de Mercado para Pymes").</li>
+                                        <li><strong>Diagnóstico de Microempresas:</strong> (Ej: "Checklist de Diagnóstico de Operaciones", "Identificación de Problemas Comunes en Ventas", "Análisis de Causas Raíz").</li>
+                                        <li><strong>Planeación Estratégica:</strong> (Ej: "Pasos para un Plan de Negocio", "Cómo Definir Objetivos SMART", "Ejemplos de Estrategias de Crecimiento").</li>
+                                        <li><strong>Soluciones y Recomendaciones:</strong> (Ej: "Estrategias de Marketing Digital para Pymes", "Optimización de Inventarios", "Acceso a Financiación", "Formalización Legal").</li>
+                                        <li><strong>Casos de Estudio Detallados:</strong> Cada caso debe incluir: <strong>Situación</strong>, <strong>Problema/Diagnóstico</strong>, <strong>Análisis Realizado</strong> y <strong>Soluciones Implementadas/Recomendadas</strong>.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Extraigan Puntos Clave y Resúmenes:</strong> Por cada documento o sección importante, creen resúmenes concisos y extraigan los datos más relevantes. Gemini es excelente para procesar texto, pero si le dan el material ya digerido, sus respuestas serán aún más precisas.
+                                    <ul>
+                                        <li><strong>Ejemplo:</strong> En lugar de darle a Gemini un PDF de 50 páginas, denle un resumen de 2 páginas con los puntos cruciales, o extraigan los párrafos más importantes sobre cada tema.</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Creen Preguntas Frecuentes (FAQ) y sus Respuestas IDEALES:</strong> Aunque Gemini es flexible, tener una lista de preguntas comunes y la respuesta "perfecta" basada en su investigación les servirá de referencia para entrenarlo.
+                                    <ul>
+                                        <li><strong>Ejemplo:</strong>
+                                            <ul>
+                                                <li><strong>Pregunta:</strong> "¿Cómo puedo formalizar mi microempresa en Colombia?"</li>
+                                                <li><strong>Respuesta Ideal:</strong> "Para formalizar tu microempresa en Colombia, los pasos clave incluyen registrarte en la Cámara de Comercio, obtener tu RUT en la DIAN, y cumplir con los requisitos de la alcaldía local y usos de suelo. Es importante también considerar el registro de marca y el RUT digital. ¿Te gustaría que te detalle alguno de estos pasos?"</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+                    </section>
+
+                    <!-- Creando tu Chatbot con Google Gemini (Canvas de Gemini) -->
+                    <section id="creacion-chatbot" class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false">
+                            <span>5. Creando tu Chatbot con Google Gemini</span>
+                            <span class="icon">></span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Ahora, vamos a la parte práctica. Para este manual, asumimos que usarán la interfaz de <strong>Google Gemini</strong> para crear el "cerebro" conversacional de su chatbot.</p>
+                            <h3>Paso 1: Accede a Google Gemini</h3>
+                            <ol>
+                                <li>Abre tu navegador y ve a <strong><a href="https://gemini.google.com" target="_blank" class="text-blue-600 hover:underline">gemini.google.com</a></strong>.</li>
+                                <li>Asegúrate de iniciar sesión con tu cuenta de Google.</li>
+                            </ol>
+                            <h3>Paso 2: El "Primer Prompt" para Tu Chatbot (Tu Rol y Directrices)</h3>
+                            <p>Para que Gemini actúe como tu chatbot experto en microempresas, necesitas darle un <strong>"primer prompt"</strong> que definirá su rol y las directrices para sus respuestas. Piensen en este como el "código base" de su chatbot.</p>
+                            <div class="code-block">
+                                <button class="copy-button" onclick="copyPrompt('prompt1')">Copiar</button>
+                                <pre id="prompt1">Actúa como un Asistente Experto en Fortalecimiento de Microempresas. Tu objetivo es proporcionar información clara, concisa y basada en el análisis, diagnóstico, planeación y soluciones para microempresas.
+
+Debes basar todas tus respuestas en la siguiente información detallada que te proporcionaré. No inventes información. Si no tienes la respuesta exacta, indícalo y ofrece las opciones de los temas principales que sí manejas.
+
+Siempre mantén un tono profesional, empático y orientado a la solución.
+
+Tu interacción inicial debe ser: "¡Hola! Soy tu Asistente para Microempresas del SENA. Estoy aquí para ayudarte con análisis, diagnóstico, planeación y soluciones para tu negocio. ¿En qué te puedo ayudar hoy? Puedes preguntar sobre un tema específico o seleccionar una de las siguientes áreas:"
+
+Ofrece estas áreas como opciones o menciona que el usuario puede preguntar libremente sobre ellas:
+- Análisis de Negocios
+- Diagnóstico de Problemas
+- Planeación Estratégica
+- Soluciones Específicas
+- Casos de Estudio Reales
+
+Espera mi próxima entrada de información (tu base de conocimiento).</pre>
+                            </div>
+                            <p><strong>Explicación del Prompt:</strong></p>
+                            <ul>
+                                <li><code>Actúa como...</code>: Define el rol del chatbot.</li>
+                                <li><code>Tu objetivo es...</code>: Establece la misión principal.</li>
+                                <li><code>Debes basar todas tus respuestas en la siguiente información...</code>: <strong>¡Crucial!</strong> Indica a Gemini que solo use la información que le darás, evitando "alucinaciones" (respuestas inventadas).</li>
+                                <li><code>No inventes información.</code>: Refuerza la directriz anterior.</li>
+                                <li><code>Si no tienes la respuesta exacta...</code>: Define el comportamiento si no tiene la información.</li>
+                                <li><code>Siempre mantén un tono...</code>: Define la personalidad.</li>
+                                <li><code>Tu interacción inicial debe ser...</code>: El mensaje de bienvenida que dará a los usuarios.</li>
+                                <li><code>Espera mi próxima entrada de información...</code>: Prepara a Gemini para recibir su base de conocimiento.</li>
+                            </ul>
+
+                            <h3>Paso 3: Cargando su Base de Conocimiento a Gemini</h3>
+                            <p>Una vez que han dado el prompt inicial, es hora de "alimentar" a Gemini con toda la información que organizaron en el Paso 3 del apartado anterior.</p>
+                            <p><strong>Método de Carga:</strong></p>
+                            <ol>
+                                <li><strong>Copiar y Pegar Directamente:</strong> La forma más sencilla. Copien y peguen el contenido de sus resúmenes, puntos clave y casos de estudio directamente en el chat de Gemini, justo después del prompt inicial. Pueden hacerlo en varias secciones si la información es muy extensa.</li>
+                                <li><strong>Formato Claro:</strong> Usen <strong>negritas</strong> para conceptos clave, <strong>listas numeradas o con viñetas</strong> para pasos o recomendaciones, y <strong>saltos de línea</strong> para que Gemini pueda procesar la información de forma estructurada.</li>
+                            </ol>
+                            <div class="code-block">
+                                <button class="copy-button" onclick="copyPrompt('prompt2')">Copiar</button>
+                                <pre id="prompt2">A continuación, te proporciono la sección de ANÁLISIS DE NEGOCIOS:
+
+[Aquí pegan el resumen o los puntos clave de su investigación sobre "Análisis de Negocios".]
+---
+Ahora, la sección de DIAGNÓSTICO DE MICROEMPRESAS:
+
+[Aquí pegan el resumen o los puntos clave de su investigación sobre "Diagnóstico de Microempresas".]
+---
+Aquí están nuestros CASOS DE ESTUDIO. Cada caso incluye: Situación, Problema/Diagnóstico, Análisis Realizado y Soluciones Implementadas/Recomendadas:
+
+**CASO 1: Tienda de Ropa "Moda Viva"**
+**Situación:** Pequeña tienda de ropa femenina en un barrio concurrido. Venta tradicional, sin presencia online.
+**Problema Principal/Diagnóstico:** Caída del 30% en ventas en los últimos 6 meses. Clientes jóvenes migrando a compras online.
+**Análisis Realizado:** Se realizó un estudio de la competencia digital y encuestas a clientes potenciales, revelando la necesidad de una presencia digital.
+**Soluciones Implementadas/Recomendadas:** Creación de perfil de Instagram con catálogo de productos, publicidad segmentada a nivel local, desarrollo de WhatsApp Business para ventas directas.
+---
+**CASO 2: Panadería Artesanal "El Horno Dorado"**
+**Situación:** Panadería con productos de alta calidad, pero con crecimiento estancado a pesar de la buena reputación.
+**Problema Principal/Diagnóstico:** Falta de diferenciación en un mercado saturado y poca estrategia para atraer nuevos clientes.
+**Análisis Realizado:** Se identificó que la panadería no comunicaba el valor añadido de sus productos artesanales y que su alcance era limitado.
+**Soluciones Implementadas/Recomendadas:** Diseño de una nueva identidad de marca que resalte lo artesanal, participación en ferias locales y creación de un programa de fidelización de clientes.
+---
+[Continúen pegando todos sus casos de estudio y el resto de su base de conocimiento, usando encabezados claros.]</pre>
+                            </div>
+
+                            <h3>Paso 4: Entrenando y Probando su Chatbot (¡La Magia de Asistencia Administrativa!)</h3>
+                            <p>Una vez que Gemini tiene la información, ¡es hora de entrenarlo y ponerlo a prueba!</p>
+                            <ol>
+                                <li><strong>Pruebas de Funcionalidad Básica:</strong> Pregunten "Hola", "Necesito ayuda con mi microempresa", "¿Qué es el análisis FODA?".</li>
+                                <li><strong>Pruebas de Casos de Estudio:</strong> Pregunten "¿Tienes ejemplos de microempresas con problemas de ventas?", "Cuéntame más sobre el caso de la panadería."</li>
+                                <li><strong>Pruebas de Diagnóstico y Soluciones:</strong> Pregunten "Mis ventas están bajas, ¿qué puedo hacer?", "Necesito mejorar la productividad en mi negocio de servicios."</li>
+                                <li><strong>Simulación de Interacciones Reales:</strong> Hagan preguntas con lenguaje natural, como lo haría un microempresario real. Intenten preguntar lo mismo de diferentes maneras.</li>
+                                <li><strong>Refinamiento de la Base de Conocimiento:</strong> Si Gemini responde algo incorrecto o incompleto, significa que la información en su base de conocimiento no es lo suficientemente clara o completa. Deben regresar al Paso 3, <strong>añadir o clarificar</strong> esa información, y luego dársela a Gemini nuevamente. <strong>¡Consejo Clave!</strong> Si hacen cambios significativos, es buena idea <strong>iniciar una nueva conversación con Gemini</strong> y volver a pegar todo el "primer prompt" y luego la base de conocimiento actualizada.</li>
+                            </ol>
+
+                            <h3>Paso 5: Exportando la Conversación o Integrando (Si es Posible)</h3>
+                            <ul>
+                                <li><strong>Capturas de Pantalla/Video:</strong> La forma más directa de mostrar el funcionamiento de su chatbot creado con Gemini es haciendo capturas de pantalla de las conversaciones clave o grabando un video interactuando con él.</li>
+                                <li><strong>Compartir la Conversación:</strong> Gemini a menudo permite compartir enlaces a conversaciones. Esto podría ser una forma de que su instructor o compañeros interactúen directamente.</li>
+                                <li><strong>Reflexión Final:</strong> Prepárense para explicar cómo la información que recopilaron se traduce en las respuestas del chatbot y cómo esto beneficia a las microempresas.</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <!-- Sugerencias de Prompts Específicos para sus Aprendices -->
+                    <section id="prompts-ejemplo" class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false">
+                            <span>6. Sugerencias de Prompts de Ejemplo (para Entrenar y Probar)</span>
+                            <span class="icon">></span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Estos son prompts de ejemplo que ustedes, como aprendices de Asistencia Administrativa, pueden usar para "hablar" con Gemini y asegurarse de que está aprendiendo y respondiendo correctamente.</p>
+
+                            <h3>Para el Rol y Base de Conocimiento:</h3>
+                            <div class="code-block">
+                                <button class="copy-button" onclick="copyPrompt('prompt3')">Copiar</button>
+                                <pre id="prompt3">Reinicia y actúa como nuestro Asistente Experto en Microempresas del SENA con esta base de datos actualizada: [Pegar aquí toda la base de conocimiento de nuevo, con las correcciones o adiciones].</pre>
+                            </div>
+
+                            <h3>Para Preguntas de Análisis:</h3>
+                            <div class="code-block">
+                                <button class="copy-button" onclick="copyPrompt('prompt4')">Copiar</button>
+                                <pre id="prompt4">Necesito saber cómo hacer un análisis de mi microempresa. ¿Qué tipos de análisis existen?
+Explícame qué es el análisis de la competencia y por qué es importante para una microempresa.
+¿Cómo puedo identificar a mi cliente ideal para mi pequeña tienda de abarrotes?</pre>
+                            </div>
+
+                            <h3>Para Preguntas de Diagnóstico:</h3>
+                            <div class="code-block">
+                                <button class="copy-button" onclick="copyPrompt('prompt5')">Copiar</button>
+                                <pre id="prompt5">¿Cuáles son los problemas más comunes que enfrentan las microempresas en crecimiento?
+Mi panadería no está vendiendo lo suficiente. ¿Cómo puedo diagnosticar la causa raíz de las bajas ventas?
+Si tengo problemas de liquidez, ¿cómo puedo hacer un diagnóstico financiero rápido?</pre>
+                            </div>
+
+                            <h3>Para Preguntas de Planeación:</h3>
+                            <div class="code-block">
+                                <button class="copy-button" onclick="copyPrompt('prompt6')">Copiar</button>
+                                <pre id="prompt6">Quiero iniciar un negocio de pastelería casera. ¿Qué pasos debo seguir para crear un plan de negocio efectivo?
+¿Cómo se definen objetivos realistas para una microempresa?
+Dame un ejemplo de un objetivo SMART para un negocio de artesanías.</pre>
+                            </div>
+
+                            <h3>Para Preguntas de Soluciones:</h3>
+                            <div class="code-block">
+                                <button class="copy-button" onclick="copyPrompt('prompt7')">Copiar</button>
+                                <pre id="prompt7">¿Qué estrategias de marketing digital recomiendan para una microempresa de servicios?
+Mi inventario está desorganizado. ¿Hay alguna solución sencilla para mejorarlo?
+¿Cómo puede mi microempresa acceder a financiación para crecer?
+Necesito ideas para retener a mis clientes en mi cafetería. ¿Qué me sugieres?</pre>
+                            </div>
+
+                            <h3>Para Preguntas sobre Casos de Estudio:</h3>
+                            <div class="code-block">
+                                <button class="copy-button" onclick="copyPrompt('prompt8')">Copiar</button>
+                                <pre id="prompt8">Muéstrame un caso de estudio sobre una microempresa que mejoró sus ventas.
+¿Tienes algún ejemplo de un negocio que haya superado problemas de gestión de personal?
+Quiero ver cómo una microempresa implementó marketing digital con éxito.
+¿Cuál fue el análisis y las soluciones en el caso de 'Moda Viva'?</pre>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Consejos Adicionales -->
+                    <section id="consejos-adicionales" class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false">
+                            <span>7. Consejos Adicionales para sus Aprendices</span>
+                            <span class="icon">></span>
+                        </button>
+                        <div class="accordion-content">
+                            <ul>
+                                <li><strong>Claridad y Simplicidad:</strong> El lenguaje debe ser sencillo y directo. Eviten la jerga técnica innecesaria.</li>
+                                <li><strong>Enfoque en Soluciones:</strong> Aunque el diagnóstico es importante, el objetivo final es brindar soluciones accionables.</li>
+                                <li><strong>Relevancia de la Información:</strong> Asegúrense de que toda la información que carguen al chatbot sea relevante para las microempresas y esté basada en sus investigaciones.</li>
+                                <li><strong>Actualización Constante:</strong> Los manuales y la información sobre microempresas pueden cambiar. Recuérdenles la importancia de actualizar la base de conocimiento del chatbot regularmente.</li>
+                                <li><strong>Pensar como el Usuario Final:</strong> Anímenlos a ponerse en el lugar de un microempresario que busca ayuda. ¿Qué preguntas harían? ¿Qué tipo de respuestas esperarían?</li>
+                                <li><strong>No Intentar Ser una Inteligencia Artificial General:</strong> Sin programación, el chatbot es tan inteligente como la información que le proporcionen y los flujos que diseñen. No esperen que tenga una conversación "libre" ilimitada. Su fuerza radica en la <strong>organización y presentación inteligente de la información preexistente</strong>.</li>
+                            </ul>
+                            <p>¡Con este manual y su dedicación, crearán un chatbot valioso que demuestre sus habilidades administrativas y su capacidad para aplicar la inteligencia artificial en beneficio del desarrollo empresarial!</p>
+                        </div>
+                    </section>
+
+                </main>
+            </div>
+        </div>
+        <!-- Placeholder SVGs - You can replace these with actual SVG content if needed -->
+        <svg class="arrow arrow--top" width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M50 10L50 90M10 50L90 50" stroke="white" stroke-width="5" class="draw-in"/>
+        </svg>
+        <svg class="arrow arrow--bottom" width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M50 10L50 90M10 50L90 50" stroke="white" stroke-width="5" class="draw-in"/>
+        </svg>
+        <svg class="dotted-circle" width="150" height="150" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="75" cy="75" r="70" stroke="white" stroke-dasharray="5 5" stroke-width="2"/>
+        </svg>
+    </div>
+
+    <script>
+        // JavaScript for Accordion functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const content = header.nextElementSibling; // Get the content div
+                    const isExpanded = header.getAttribute('aria-expanded') === 'true';
+
+                    // Close all other open accordions
+                    accordionHeaders.forEach(otherHeader => {
+                        if (otherHeader !== header && otherHeader.getAttribute('aria-expanded') === 'true') {
+                            otherHeader.setAttribute('aria-expanded', 'false');
+                            otherHeader.nextElementSibling.classList.remove('expanded');
+                        }
+                    });
+
+                    // Toggle the clicked accordion
+                    if (isExpanded) {
+                        header.setAttribute('aria-expanded', 'false');
+                        content.classList.remove('expanded');
+                    } else {
+                        header.setAttribute('aria-expanded', 'true');
+                        content.classList.add('expanded');
+                        // Scroll to the opened section for better UX
+                        setTimeout(() => {
+                            header.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }, 300); // Give time for the accordion to expand
+                    }
+                });
+            });
+
+            // JavaScript for Copy to Clipboard functionality
+            window.copyPrompt = function(elementId) {
+                const promptText = document.getElementById(elementId).textContent;
+                // Use the deprecated document.execCommand('copy') for better iframe compatibility
+                const textArea = document.createElement('textarea');
+                textArea.value = promptText;
+                document.body.appendChild(textArea);
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    alert('¡Prompt copiado al portapapeles!'); // Use alert as per previous example's logic, though custom modal is preferred in real apps.
+                } catch (err) {
+                    console.error('Error al copiar el prompt: ', err);
+                    alert('No se pudo copiar el prompt. Por favor, cópialo manualmente.');
+                }
+                document.body.removeChild(textArea);
+            };
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('.manual-nav a').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        // Expand the accordion item if it's not already expanded
+                        const header = targetElement.querySelector('.accordion-header');
+                        if (header && header.getAttribute('aria-expanded') === 'false') {
+                            header.click(); // Simulate a click to expand
+                        }
+                        setTimeout(() => {
+                            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        }, 300); // Give time for accordion to expand before scrolling
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
